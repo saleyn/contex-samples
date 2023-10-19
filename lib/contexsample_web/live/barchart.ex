@@ -29,28 +29,28 @@ defmodule ContexSampleWeb.BarChartLive do
               <input type="number" name="categories" id="categories" placeholder="Enter #categories" value=<%= @chart_options.categories %>>
 
               <label for="type">Type</label>
-              <%= raw_select("type", "type", chart_type_options(), Atom.to_string(@chart_options.type)) %>
+              <.raw_select name={"type"} id={"type"} options={chart_type_options()} current_item={Atom.to_string(@chart_options.type)}/>
 
               <label for="orientation">Orientation</label>
-              <%= raw_select("orientation", "orientation", chart_orientation_options(), Atom.to_string(@chart_options.orientation)) %>
+              <.raw_select name={"orientation"} id={"orientation"} options={chart_orientation_options()} current_item={Atom.to_string(@chart_options.orientation)}/>
 
               <label for="colour_scheme">Colour Scheme</label>
-              <%= raw_select("colour_scheme", "colour_scheme", colour_options(), @chart_options.colour_scheme) %>
+              <.raw_select name={"colour_scheme"} id={"colour_scheme"} options={colour_options()} current_item={@chart_options.colour_scheme}/>
 
               <label for="legend_setting">Legend</label>
-              <%= raw_select("legend_setting", "legend_setting", legend_options(), @chart_options.legend_setting) %>
+              <.raw_select name={"legend_setting"} id={"legend_setting"} options={legend_options()} current_item={@chart_options.legend_setting}/>
 
               <label for="show_axislabels">Show Axis Labels</label>
-              <%= raw_select("show_axislabels", "show_axislabels", yes_no_options(), @chart_options.show_axislabels) %>
+              <.raw_select name={"show_axislabels"} id={"show_axislabels"} options={yes_no_options()} current_item={@chart_options.show_axislabels}/>
 
               <label for="show_data_labels">Show Data Labels</label>
-              <%= raw_select("show_data_labels", "show_data_labels", yes_no_options(), @chart_options.show_data_labels) %>
+              <.raw_select name={"show_data_labels"} id={"show_data_labels"} options={yes_no_options()} current_item={@chart_options.show_data_labels}/>
 
               <label for="custom_value_scale">Custom Value Scale</label>
-              <%= raw_select("custom_value_scale", "custom_value_scale", yes_no_options(), @chart_options.custom_value_scale) %>
+              <.raw_select name={"custom_value_scale"} id={"custom_value_scale"} options={yes_no_options()} current_item={@chart_options.custom_value_scale}/>
 
               <label for="show_selected">Show Clicked Bar</label>
-              <%= raw_select("show_selected", "show_selected", yes_no_options(), @chart_options.show_selected) %>
+              <.raw_select name={"show_selected"} id={"show_selected"} options={yes_no_options()} current_item={@chart_options.show_selected}/>
             </form>
 
           </div>

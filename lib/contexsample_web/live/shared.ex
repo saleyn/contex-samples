@@ -1,6 +1,13 @@
 defmodule ContexSampleWeb.Shared do
-  import Phoenix.HTML
-  import Phoenix.LiveView, only: [assign: 2]
+  use Phoenix.Component
+
+  def raw_select(assigns) do
+    ~H"""
+    <select  type="select" name={@name} id={@id}>
+    <option :for={o <- @options} value={o.value} selected={o.value == @current_item}><%= o.name %></option>
+    </select>
+    """
+  end
 
   def update_chart_options_from_params(socket, params) do
     options =
@@ -45,18 +52,6 @@ defmodule ContexSampleWeb.Shared do
   def lookup_colours(_), do: nil
 
   def simple_option_list(options), do: Enum.map(options, &%{name: &1, value: &1})
-
-  def raw_select(name, id, options, current_item) do
-    beginning_bit = ~E|<select  type="select" name="<%= name %>" id="<%= id %>">|
-
-    middle_bit = Enum.map(options, fn o ->
-      selected = if o.value == current_item, do: "selected", else: ""
-      ~E|<option value="<%= o.value %>" <%= selected %>><%= o.name %></option>|
-    end)
-
-    end_bit = ~E|</select>|
-    [beginning_bit, middle_bit, end_bit]
-  end
 
   def list_to_comma_string(nil), do: ""
   def list_to_comma_string(list), do: Enum.join(list, ", ")

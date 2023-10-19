@@ -28,15 +28,15 @@ defmodule ContexSampleWeb.Router do
     get "/faq", PageController, :faq
 
 #    live "/barcharts", BarChartLive, session: ["remote_ip"]
-    live "/barcharts", BarChartLive, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/barchart_timer", BarChartTimer, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/multibar", MultiBarChart, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/sparklines", SparklineLive, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/gantt", GanttLive, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/point", PointPlotLive, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/scales", ScalesLive, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/piechart", PieChartLive, layout: {ContexSampleWeb.LayoutView, :root}
-    live "/simple-piechart", SimplePieChartLive, layout: {ContexSampleWeb.LayoutView, :root}
+    live "/barcharts", BarChartLive
+    live "/barchart_timer", BarChartTimer
+    live "/multibar", MultiBarChart
+    live "/sparklines", SparklineLive
+    live "/gantt", GanttLive
+    live "/point", PointPlotLive
+    live "/scales", ScalesLive
+    live "/piechart", PieChartLive
+    live "/simple-piechart", SimplePieChartLive
   end
 
 end
